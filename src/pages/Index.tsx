@@ -1,7 +1,10 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
+import Navigation from '../components/Navigation';
+import HeroSection from '../components/HeroSection';
 import ManifestoHeader from '../components/ManifestoHeader';
 import ManifestoPoint from '../components/ManifestoPoint';
+import CallToAction from '../components/CallToAction';
 import Footer from '../components/Footer';
 
 const manifestoPoints = [
@@ -33,8 +36,32 @@ const manifestoPoints = [
 ];
 
 const Index = () => {
+  // Add scroll animations to the CSS when the page loads
+  useEffect(() => {
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes fade-in {
+        0% { opacity: 0; transform: translateY(10px); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+      
+      .animate-fade-in {
+        animation: fade-in 1s ease forwards;
+      }
+    `;
+    document.head.appendChild(style);
+    
+    return () => {
+      document.head.removeChild(style);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
+      <Navigation />
+      
+      <HeroSection />
+      
       <div className="container mx-auto px-4">
         <ManifestoHeader />
         
@@ -42,6 +69,7 @@ const Index = () => {
           {manifestoPoints.map((point, index) => (
             <ManifestoPoint 
               key={index}
+              index={index}
               number={point.number}
               title={point.title}
               content={point.content}
@@ -49,8 +77,10 @@ const Index = () => {
           ))}
         </main>
         
-        <Footer />
+        <CallToAction />
       </div>
+      
+      <Footer />
     </div>
   );
 };
