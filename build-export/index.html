@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bitcoin Education</title>
+    
+    <!-- Favicon and PWA support -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+    <link rel="manifest" href="./site.webmanifest">
+    <meta name="theme-color" content="#f97316">
+    <meta name="msapplication-TileColor" content="#f97316">
+    
+    <!-- Basic SEO -->
+    <meta name="description" content="Explore the transformative power of Bitcoin through multiple perspectives, educational resources, and community insights.">
+    <meta name="keywords" content="bitcoin, cryptocurrency, blockchain, education, digital currency, investment, finance">
+    <meta name="author" content="Bitcoin Education">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Bitcoin Education">
+    <meta property="og:description" content="Explore the transformative power of Bitcoin through multiple perspectives, educational resources, and community insights.">
+    <meta property="og:image" content="./images/og-default.jpg">
+    <meta property="og:url" content="https://storeofvalue.ch">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bitcoin Education">
+    <meta name="twitter:description" content="Explore the transformative power of Bitcoin through multiple perspectives, educational resources, and community insights.">
+    <meta name="twitter:image" content="./images/og-default.jpg">
+    
+    <!-- Preload fonts -->
+    <link rel="preload" href="./fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+    <script type="module" crossorigin src="./assets/index-DuLkdcjr.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/vendor-B7fZIvwt.js">
+    <link rel="modulepreload" crossorigin href="./assets/vendor-react-CDB3UdER.js">
+    <link rel="stylesheet" crossorigin href="./assets/index-T8SDvtNf.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <div style="padding: 2rem; text-align: center; max-width: 600px; margin: 0 auto;">
+        <h1>JavaScript is Required</h1>
+        <p>This Bitcoin Education application requires JavaScript to run. Please enable JavaScript in your browser settings and reload the page.</p>
+      </div>
+    </noscript>
+    
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js')
+            .then(registration => {
+              console.log('Service Worker registered with scope:', registration.scope);
+            })
+            .catch(error => {
+              console.error('Service Worker registration failed:', error);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>

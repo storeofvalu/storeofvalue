@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting...</title>
+  <script>
+    // Single Page App redirect script
+    // This script takes the current URL and converts the path to a hash route
+    // that the SPA router can handle correctly
+    (function() {
+      var path = window.location.pathname;
+      var searchParams = window.location.search;
+      
+      // Remove any trailing slash from the path
+      if (path.endsWith('/') && path.length > 1) {
+        path = path.slice(0, -1);
+      }
+      
+      // Redirect to the root with the path as a hash route
+      window.location.href = window.location.origin + 
+        (window.location.origin.endsWith('/') ? '' : '/') + 
+        '#' + path + searchParams;
+    })();
+  </script>
+</head>
+<body>
+  <p>Redirecting...</p>
+</body>
+</html> 
